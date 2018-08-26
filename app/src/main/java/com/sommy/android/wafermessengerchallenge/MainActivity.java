@@ -1,7 +1,6 @@
 package com.sommy.android.wafermessengerchallenge;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,8 +30,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.graphics.Color.rgb;
-
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private static final int COUNTRY_SEARCH_LOADER = 2;
@@ -41,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private TextView mErrorMessageTextView;
 
     private CountryListAdapter mCountryListAdapter;
-    final int PURPLE = rgb(85, 26, 139);
-    private Paint p = new Paint();
+    private int PURPLE;
     private boolean passedAnchorPoint = false;
     public static int disablePosition = -1;
 
@@ -69,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         mCountryListAdapter = new CountryListAdapter(this);
         mCountryRecyclerView.setAdapter(mCountryListAdapter);
+
+        PURPLE = ContextCompat.getColor(this,R.color.purple);
 
          /*
          Add a touch helper to the RecyclerView to recognize when a user swipes to delete an item.

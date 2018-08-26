@@ -3,4 +3,5 @@
     <string name="error_message">Please check your internet connection</string>
     <string name="currency_label">Currency :</string>
     <string name="language_label">language :</string>
+    <string name="delete">delete</string>
 </resources>
