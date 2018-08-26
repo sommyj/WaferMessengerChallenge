@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- RecyclerView that is responsible for holding a list of country data -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/country_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/recyclerView_bottom_padding"/>
+
+    <!-- A progress bar that will be shown to users to indicate that weather data is loading -->
+    <ProgressBar
+        android:id="@+id/pb_loading_indicator"
+        android:layout_width="@dimen/progressBar_dimens"
+        android:layout_height="@dimen/progressBar_dimens"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+    <!--A text view to show an error message in case the weather data fails to load-->
+    <TextView
+        android:id="@+id/error_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/error_message_margin"
+        android:text="@string/error_message"
+        android:textSize="42sp"
+        android:visibility="invisible" />
+
+</FrameLayout>
